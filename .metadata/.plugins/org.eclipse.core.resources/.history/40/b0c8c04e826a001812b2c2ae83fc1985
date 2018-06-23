@@ -1,0 +1,14 @@
+package com.bikash.test;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+	
+    System.setProperty("webdriver.ie.driver", "C:\\Users\\Bikash\\Videos\\selenium doc\\SELENIUM\\IE Driver\\IEDriverServer.exe");
+	WebDriver driver=new InternetExplorerDriver();
+	}
+
+}

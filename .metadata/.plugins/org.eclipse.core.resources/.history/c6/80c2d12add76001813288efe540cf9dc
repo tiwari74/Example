@@ -1,0 +1,50 @@
+package com.bikash.test;
+
+import java.awt.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.interactions.Keyboard;
+
+public class Example1 {
+
+	public static void main(String[] args) throws InterruptedException {
+
+		/*     enium-firefox-driver-2.0a4.jar"
+		 * System.setProperty("webdriver.ie.driver", "C:\\Users\\Bikash\\Videos\\selenium doc\\SELENIUM\\IE Driver\\IEDriverServer.exe");
+	WebDriver driver=new InternetExplorerDriver();*/
+		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Bikash\\Videos\\selenium doc\\SELENIUM\\Geco Driver\\geckodriver.exe");
+		WebDriver driver=new FirefoxDriver();
+		/*System.setProperty("webdriver.chrome.driver", "C:\\Users\\Bikash\\Videos\\selenium doc\\SELENIUM\\chrome driver\\chromedriver.exe");
+		WebDriver driver=new ChromeDriver();*/
+		driver.get("https://finance.corp.syntel.in");
+		driver.manage().window().maximize();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//*[@title=\"User ID\"]")).sendKeys("BT5030583");
+		Thread.sleep(1000);
+		driver.findElement(By.id("pwd")).sendKeys("Syntel55@");
+		driver.findElement(By.name("Submit")).click();
+		Thread.sleep(3000);
+		if (driver.findElement(By.xpath("//*[@id=\"win0groupletPTNUI_LAND_REC_GROUPLET$3\"]")).isDisplayed()) {
+			driver.findElement(By.xpath("//*[@id=\"win0groupletPTNUI_LAND_REC_GROUPLET$3\"]")).click();
+		} else {
+
+		}
+		Thread.sleep(4000);
+		//*[@id="SY_SPZ_GP_WRK_SY_LOCATION_PUNE"]
+		driver.findElement(By.xpath("//*[@id=\"SY_SPZ_GP_WRK_SY_LOCATION_PUNE\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.id("ICSearch")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"SY_GP_WRK_SY_GP_TYPE1\"]")).click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//*[@id=\"SY_GP_HDR_SY_GP_NAME\"]")).sendKeys("Bikash Kumar Tiwari");
+		driver.findElement(By.xpath("//*[@id=\"SY_GP_HDR_SY_ADDRESS\"]")).sendKeys("Nigdi pune");
+		driver.findElement(By.xpath("//*[@id=\"pthdr2logout\"]")).click();
+	}
+
+}

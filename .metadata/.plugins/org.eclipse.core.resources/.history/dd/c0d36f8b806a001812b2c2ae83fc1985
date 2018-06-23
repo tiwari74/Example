@@ -1,0 +1,11 @@
+package com.bikash.test;
+
+public class Example1 {
+
+	public static void main(String[] args) {
+	
+    System.setProperty("webdriver.ie.driver", "C:\\Users\\Bikash\\Videos\\selenium doc\\SELENIUM\\IE Driver\\IEDriverServer.exe");
+	
+	}
+
+}
